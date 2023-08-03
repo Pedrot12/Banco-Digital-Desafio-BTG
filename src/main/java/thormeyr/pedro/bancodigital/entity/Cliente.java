@@ -17,7 +17,7 @@ public class Cliente {
     @Id @GeneratedValue
     private long id;
 
-    private long nome;
+    private String nome;
 
     @Column(unique = true)
     private long cpf;
