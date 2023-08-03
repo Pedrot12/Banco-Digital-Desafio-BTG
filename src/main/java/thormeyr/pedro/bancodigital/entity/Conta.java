@@ -14,14 +14,12 @@ import java.util.ArrayList;
 @Table(name = "tb_contas")
 public class Conta {
 
-    @Id @GeneratedValue
-    private long id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long numeroConta;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
-
-    private long  numeroConta;
 
     private double saldo;
 

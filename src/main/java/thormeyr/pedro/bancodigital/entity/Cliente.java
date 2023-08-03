@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Table(name = "tb_clientes")
 public class Cliente {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String nome;
@@ -24,9 +24,5 @@ public class Cliente {
 
     private String cidade;
 
-    @OneToOne()
-    private Conta conta;
-
-    private LocalDate dataDeNascimento;
 
 }
