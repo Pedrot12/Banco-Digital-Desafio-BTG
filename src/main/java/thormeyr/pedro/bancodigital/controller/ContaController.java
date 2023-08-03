@@ -1,5 +1,8 @@
 package thormeyr.pedro.bancodigital.controller;
 
+import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import thormeyr.pedro.bancodigital.entity.Cliente;
@@ -16,38 +19,47 @@ public class ContaController {
     @Autowired
     private ContaServiceImpl service;
 
+    @Hidden
     @PostMapping
-    public Conta criaConta(@RequestBody Cliente cliente){
+    public Conta criaConta(@Parameter(hidden = true) @RequestBody Cliente cliente){
         return service.criaConta(cliente);
     }
+
+    @Operation(summary = "Lista todas as contas")
     @GetMapping
     public List<Conta> listaConta(){ return service.listaConta();}
 
-    @GetMapping("/busca/{id}")
-    public Conta buscaConta(@PathVariable long id){ return service.buscaConta(id);}
+    @Operation(summary = "Busca uma conta pelo numero da conta")
+    @GetMapping("/busca/{numeroConta}")
+    public Conta buscaConta(@PathVariable long numeroConta){ return service.buscaConta(numeroConta);}
 
+    @Operation(summary = "Saca o valor de uma conta")
     @PostMapping("/sacar/{id}/{valor}")
-    public Conta sacarValor(@PathVariable("id") long id, @PathVariable("valor") Double valor){
-        return service.sacarValor(id,valor);
+    public Conta sacarValor(@PathVariable("numeroConta") long numeroConta, @PathVariable("valor") Double valor){
+        return service.sacarValor(numeroConta,valor);
     }
 
-    @PostMapping("/depositar/{id}/{valor}")
-    public Conta depositarValor(@PathVariable("id") long id, @PathVariable("valor") Double valor){
-        return service.depositarValor(id,valor);
+    @Operation(summary = "Deposita o valor em uma conta")
+    @PostMapping("/depositar/{numeroConta}/{valor}")
+    public Conta depositarValor(@PathVariable("numeroConta") long numeroConta, @PathVariable("valor") Double valor){
+        return service.depositarValor(numeroConta,valor);
     }
 
-    @GetMapping("/saques/{id}")
-    public List<Double> listaSaques(@PathVariable long id){
-        return service.listaSaques(id);
+    @Operation(summary = "Apresentas as movimentações de saques em uma conta")
+    @GetMapping("/saques/{numeroConta}")
+    public List<Double> listaSaques(@PathVariable long numeroConta){
+        return service.listaSaques(numeroConta);
     }
 
-    @GetMapping("/depositos/{id}")
-    public List<Double> listaDepositos(@PathVariable long id){
-        return service.listaDepositos(id);
+    @Operation(summary = "Apresentas as movimentações de depósitos em uma conta")
+    @GetMapping("/depositos/{numeroConta}")
+    public List<Double> listaDepositos(@PathVariable long numeroConta){
+        return service.listaDepositos(numeroConta);
     }
 
-    @PostMapping("/apaga/{id}")
-    public void apagaConta(@PathVariable long id){ service.apagaConta(id);}
+    @Hidden
+    @PostMapping("/apaga/{numeroConta}")
+    public void apagaConta(@Parameter(hidden = true) @PathVariable long numeroConta){ service.apagaConta(numeroConta);}
 
 
 
