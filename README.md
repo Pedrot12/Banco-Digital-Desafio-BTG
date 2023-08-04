@@ -36,7 +36,7 @@ Para executar a aplicação, primeiramente é necessário iniciar um banco de da
 
     create database bancodigital
 
-Após isso basta iniciar a aplicação em alguma IDE, como o IntelliJ, e abrir a dependência "http://localhost:8080/swagger-ui/index.html", onde é possível testar as requisições e retornos dos serviços da API.
+Após isso altere o usuário e senha do banco de dados no 'arquivo aplication.yml",e então basta inicie a aplicação em alguma IDE, como o IntelliJ, e abra a dependência "http://localhost:8080/swagger-ui/index.html", onde é possível testar as requisições e retornos dos serviços da API.
 
 ## Teste da API
 Através do Swagger UI é possível fazer o teste da API utilizando os métodos GET e POST que controlam os serviços da aplicação. Abaixo serão listados os serviços da aplicação e seus testes no Swagger. Para executar os métodos é necessário clicar no botão "Try it out" para executar o request.
