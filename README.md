@@ -25,8 +25,9 @@ Repository - Responsável por se comunicar com o banco de dados através do Spri
 
 Service - Responsável por implementar os métodos e serviços realizados pela API
 
-<img  src="Screenshots\Arquitetura.png">
-
+<p align="center">
+    <img  src="Screenshots\Arquitetura.png">
+</p>
 
 ## Execução da aplicação
 Para executar a aplicação, primeiramente é necessário iniciar um banco de dados com o nome "bancodigital" no ambiente do PostgreSQL, seguindo os comando abaixos:
