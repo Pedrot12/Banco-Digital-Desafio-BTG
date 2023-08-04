@@ -34,14 +34,14 @@ public class ContaController {
     public Conta buscaConta(@PathVariable long numeroConta){ return service.buscaConta(numeroConta);}
 
     @Operation(summary = "Saca o valor de uma conta")
-    @PostMapping("/sacar/{id}/{valor}")
-    public Conta sacarValor(@PathVariable("numeroConta") long numeroConta, @PathVariable("valor") Double valor){
+    @PostMapping("/sacar/{numeroConta}/{valor}")
+    public Conta sacarValor(@Parameter(name = "numeroConta") @PathVariable("numeroConta") long numeroConta,@Parameter(name = "valor") @PathVariable("valor") Double valor){
         return service.sacarValor(numeroConta,valor);
     }
 
     @Operation(summary = "Deposita o valor em uma conta")
     @PostMapping("/depositar/{numeroConta}/{valor}")
-    public Conta depositarValor(@PathVariable("numeroConta") long numeroConta, @PathVariable("valor") Double valor){
+    public Conta depositarValor(@Parameter(name = "numeroConta") @PathVariable("numeroConta") long numeroConta,@Parameter(name = "valor") @PathVariable("valor") Double valor){
         return service.depositarValor(numeroConta,valor);
     }
 

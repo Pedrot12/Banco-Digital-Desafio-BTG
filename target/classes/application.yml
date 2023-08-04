@@ -4,11 +4,25 @@ spring:
     url: jdbc:postgresql://localhost:5432/bancodigital
     username: postgres
     password: 123456
+    initialize: true
+    schema: ${bancodigital}
+
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
     properties:
       hibernate.format_sql: true
+#spring.datasource.url=jdbc:postgresql://localhost:5432/bancodigital
+#spring.datasource.username=postgres
+#spring.datasource.password=123456
+#
+#spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.show-sql=true
+#spring.jpa.properties.hibernate.format_sql=true
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+
+
 
 
