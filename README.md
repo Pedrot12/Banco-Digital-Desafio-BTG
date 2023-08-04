@@ -61,6 +61,13 @@ Essa função altera as informações principais do cliente, deve se fornecer o 
     <img  src="Screenshots\AtualizaCliente.jpg">
 </p>
 
+### Apagar cadastro do cliente
+Essa função apaga o cliente de acordo com o cpf fornecido
+
+<p align="center">
+    <img  src="Screenshots\ApagaCliente.png">
+</p>
+
 ### Buscar cliente
 Busca o cliente de acordo com o CPF solicitado
 <p align="center">
