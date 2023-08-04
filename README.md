@@ -8,7 +8,7 @@ O projeto tem o objetivo de simular o sistema de um banco digital, ele foi feito
 A relação entre as entidades da aplicação foi feita de um modo um para um, em que toda entidade Conta possui um Cliente sendo atribuido sua relação na criação do Cliente, portanto para todo cliente criado uma conta é criada armazenando os atributos do cliente. Sendo essas duas entidades compostas pelos atributos listados no diagrama abaixo.
 
 <p align="center">
-    <img width="900" height="300" src="Screenshots\DER.jpg">
+    <img  src="Screenshots\DER.jpg">
 </p>
 
 ## Arquitetura do Projeto
@@ -30,7 +30,7 @@ Para executar a aplicação, primeiramente é necessário iniciar um banco de da
 
     psql -U postgres
 
-    create database banco digital
+    create database bancodigital
 
 Após isso basta iniciar a aplicação em alguma IDE, como o IntelliJ, e abrir a dependência "http://localhost:8080/swagger-ui/index.html", onde é possível testar as requisições e retornos dos serviços da API.
 
@@ -38,65 +38,65 @@ Após isso basta iniciar a aplicação em alguma IDE, como o IntelliJ, e abrir a
 Através do Swagger UI é possível fazer o teste da API utilizando os métodos GET e POST que controlam os serviços da aplicação. Abaixo serão listados os serviços da aplicação e seus testes no Swagger. Para executar os métodos é necessário clicar no botão "Try it out" para executar o request.
 
 ### Cadastro de Cliente
-Através de método é possível cadastrar um novo cliente utilizando o Request body no padrão mostrado abaixo.
+Através desse método é possível cadastrar um novo cliente utilizando o Request body no padrão mostrado abaixo.
 
 <p align="center">
-    <img width="470" height="300" src="Screenshots\CadastroCliente.jpg">
+    <img  src="Screenshots\CadastroCliente.jpg">
 </p>
 
 ### Mostrar todos os cliente
 Executando esse request é possível visualizar todos os clientes que estão no banco de dados através do Response body.
 
 <p align="center">
-    <img width="470" height="300" src="Screenshots\MostraClientes.jpg">
+    <img  src="Screenshots\MostraClientes.jpg">
 </p>
 
 ### Atualizar cadastro do cliente
-Essa função altera as informações principais do cliente, deve se fornecer o cpf do cliente que seja ser atualizado e colocar os novos dados.
+Essa função altera as informações principais do cliente, deve se fornecer o cpf do cliente que deseja ser atualizado e colocar os novos dados.
 <p align="center">
-    <img width="470" height="300" src="Screenshots\AtualizaCliente.jpg">
+    <img  src="Screenshots\AtualizaCliente.jpg">
 </p>
 
 ### Buscar cliente
-
+Busca o cliente de acordo com o CPF solicitado
 <p align="center">
-    <img width="470" height="300" src="Screenshots\BuscaCliente.jpg">
+    <img  src="Screenshots\BuscaCliente.jpg">
 </p>
 
 ### Mostrar todas as contas
 
 <p align="center">
-    <img width="470" height="300" src="Screenshots\MostraContas.jpg">
+    <img  src="Screenshots\MostraContas.jpg">
 </p>
 
 ### Buscar conta
-
+Busca a conta de acordo com o número de conta solicitado
 <p align="center">
-    <img width="470" height="300" src="Screenshots\BuscaConta.jpg">
+    <img  src="Screenshots\BuscaConta.jpg">
 </p>
 
 ### Depositar
-
+Deposita determinado valor na conta de acordo com o numero de conta 
 <p align="center">
-    <img width="470" height="300" src="Screenshots\Depositar.jpg">
+    <img  src="Screenshots\Depositar.jpg">
 </p>
 
 ### Sacar
-
+Saca determinado valor da conta de acordo com o numero de conta 
 <p align="center">
-    <img width="470" height="300" src="Screenshots\Sacar.jpg">
+    <img  src="Screenshots\Sacar.jpg">
 </p>
 
 ### Apresentar movimentações de saque de uma conta
-
+Mostra o histórico de saques a partir do numero de conta 
 <p align="center">
-    <img width="470" height="300" src="Screenshots\MostraSaques.jpg">
+    <img src="Screenshots\MostraSaques.jpg">
 </p>
 
 ### Apresentar movimentações de deposito de uma conta
-
+Mostra o histórico de depósito a partir do numero de conta 
 <p align="center">
-    <img width="470" height="300" src="Screenshots\MostraDepositos.jpg">
+    <img src="Screenshots\MostraDepositos.jpg">
 </p>
 
 
